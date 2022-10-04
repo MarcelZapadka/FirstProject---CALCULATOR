@@ -41,35 +41,35 @@ function app() {
     })  
 
     //Minus operation
-    minusElement.addEventListener('click', function() {
+    minusElement.addEventListener('click', () => {
         if (resultElement.innerHTML == '') {
             resultElement.innerHTML += '-';
             return; 
         }
-            calculate()
-            divOperator.innerText = '-'
+         calculate()
+         divOperator.innerText = '-'
     }   )
 
     //Divide operation
-    divideElement.addEventListener('click', function() {
+    divideElement.addEventListener('click', () => {
         calculate()
         divOperator.innerText = ':';
     })
 
     //Multiply operation
-    multiplyElement.addEventListener('click', function() {
+    multiplyElement.addEventListener('click', () => {
         calculate()
         divOperator.innerText = 'x';
     })
 
     //Modulus operation
-    percentElement.addEventListener('click', function() {
+    percentElement.addEventListener('click', () => {
         calculate()
         divOperator.innerText = '%';
     })
 
     // Equals operation
-    equalsElement.addEventListener("click", function(){
+    equalsElement.addEventListener("click", () =>{
         if (previous.innerText == '') return
             calculate()
             resultElement.innerText = previous.innerText;
@@ -78,20 +78,20 @@ function app() {
     }   )  
 
     //Adding dot
-    dotElement.addEventListener('click', function(){
+    dotElement.addEventListener('click', () =>{
         if (resultElement.innerHTML.includes('.')) return;
             resultElement.innerHTML += '.';
     }   )    
 
     //Clearing calculator
-    clearAll.addEventListener('click', function() {
+    clearAll.addEventListener('click', () => {
         resultElement.innerText = '';
         previous.innerText = ''
         divOperator.innerText = '';
     })
 
     //Deleting last number in calculator
-    deleteElement.addEventListener("click", function() {
+    deleteElement.addEventListener("click", () => {
         resultElement.innerHTML = resultElement.innerHTML.slice(0, -1);
     })
 
