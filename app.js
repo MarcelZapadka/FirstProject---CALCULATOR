@@ -24,7 +24,7 @@ function app() {
     let nine = document.getElementById("button-9");
     let zero = document.getElementById("button-0");
     let previous = document.getElementById("previous");
-    let divOperator = document.getElementById("operator")
+    let divOperator = document.getElementById("operator");
 
     //Adding functionality to buttons
     for (let i = 0; i <= 9; i++) {
@@ -36,7 +36,7 @@ function app() {
 
     //Plus operation
     plusElement.addEventListener('click', function() {
-        calculate()
+        calculate();
         divOperator.innerText = '+';
     })  
 
@@ -46,32 +46,32 @@ function app() {
             resultElement.innerHTML += '-';
             return; 
         }
-         calculate()
+         calculate();
          divOperator.innerText = '-'
     }   )
 
     //Divide operation
     divideElement.addEventListener('click', () => {
-        calculate()
+        calculate();
         divOperator.innerText = ':';
     })
 
     //Multiply operation
     multiplyElement.addEventListener('click', () => {
-        calculate()
+        calculate();
         divOperator.innerText = 'x';
     })
 
     //Modulus operation
     percentElement.addEventListener('click', () => {
-        calculate()
+        calculate();
         divOperator.innerText = '%';
     })
 
     // Equals operation
     equalsElement.addEventListener("click", () =>{
         if (previous.innerText == '') return
-            calculate()
+            calculate();
             resultElement.innerText = previous.innerText;
             previous.innerText = ''
             divOperator.innerText = ''
@@ -91,9 +91,7 @@ function app() {
     })
 
     //Deleting last number in calculator
-    deleteElement.addEventListener("click", () => {
-        resultElement.innerHTML = resultElement.innerHTML.slice(0, -1);
-    })
+    deleteElement.addEventListener( "click", () => resultElement.innerHTML = resultElement.innerHTML.slice(0, -1) )
 
     // Core function, it runs the Calculator
     function calculate() {
@@ -121,7 +119,6 @@ function app() {
     //Switch color of calculator onClick
     switchMode.classList.add("add")
     switchMode.addEventListener("click", function() {
-
         switchMode.classList.toggle("add");
         container.classList.toggle("toggle");
         plusElement.classList.toggle("buttons");
